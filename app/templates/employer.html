@@ -1,0 +1,45 @@
+<!-- Employer HTML 
+    palagay ng bootstrap or forms dito
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employer</title>
+<body>
+    <h1>For employers</h1>
+    <form action="/add_employee_form_submit/", method="post"> <!--it will use 'add_employee_form_submit' url after submitting form-->
+
+        {% csrf_token %} <!-- added for privacy reasons/security-->
+        <br>
+        <input type = "text" name="name" placeholder="Enter employee name">
+        <br>
+        <input type = "text" name="position" placeholder="Enter employee position">
+        <br>
+        <input type = "text" name="email" placeholder="Enter employee email">
+        <br>
+        <input type = "text" name="address" placeholder="Enter employee address">
+        <br><br>
+        <input type = "text" name="basic_pay" placeholder="Enter employee's Basic Pay">
+        <br>
+        <input type = "text" name="overtime_hours" placeholder="Enter the number of overtime hours">
+        <br>
+        <input type = "text" name="allowance" placeholder="Enter allowance if any">
+        <br>
+        <input type = "text" name="days_leave" placeholder="Enter days of leave">
+        <br>
+        <input type = "text" name="other_deductions" placeholder="Enter Other Deductions if any">
+        <br><br>
+        <input type="submit" value="add fookin employee">
+    
+    
+    </form>
+    
+    <br><br>
+    <b>Homepage -></b>
+    <a href= "{% url 'index' %}" button>home</button></a>
+
+</body>
+</head>
+
+</html>

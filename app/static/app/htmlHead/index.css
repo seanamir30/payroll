@@ -1,0 +1,120 @@
+
+
+.bus-icon{
+	padding: 30px;
+	width: 280px;
+}
+.menu{
+	padding: 30px
+}
+.employerButton{
+	background-color: #fb9646;
+	font-weight: 600;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+	width: 100px;
+	height: 45px;
+	float: right;
+	outline:none;
+	line-height: 43px;
+}
+.employeeButton{
+	background-color: #fb9646;
+	font-weight: 600;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+	width: 100px;
+	height: 45px;
+	float: right;
+	outline:none;
+	line-height:40px;
+}
+.employerButton:hover{
+	color: white;
+	background-color: #ffa228;
+}
+
+.greeting{
+	background-color: #ffa228;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	padding:15px;
+	font-weight: bold;
+	display: block;
+  font-size: 2em;
+  color: white;
+}
+.whole-receipt{
+	box-shadow: 5px 5px 5px 5px grey;
+	padding: 0;
+	border-radius: 15px;
+	box-shadow: 0 0 25px grey;
+}
+.receipt{
+	padding: 15px;
+}
+.net-pay{
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background-color: #ff7878;
+	padding: 20px;
+}
+.name{
+	color: white;
+}
+.divider{
+	width:1px;
+    height:auto;
+    display:inline-block;
+}
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #ec7c2a;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #ec7c2a;
+}
+
+.searchTerm:focus{
+  color: #ec7c2a;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #fb9646;
+  background: #fb9646;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 40%;
+  right: 10%;
+}
+.desc{
+	color: #fb9646;
+	font-weight: bold;
+	
+}

@@ -1,0 +1,113 @@
+<!-- Employee HTML 
+    palagay ng bootstrap or forms dito
+-->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <link rel="stylesheet" href="{% static 'app/htmlHead/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'app/htmlHead/employee.css'%}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="{% static 'app/htmlHead/js/bootstrap.min.js'%}"></script>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'index' %}"><img class='bus-icon' src="{% static 'app/images/bus-icon.png' %}"></a>
+            </div>
+            <div class="col-md-4"></div>
+            <div class = "col-md-4 menu">
+                <a href = "employer/"class = "employerButton">Employer</button></a>
+            </div>
+        </div>
+    <!-- Code for when there is no result found. Will display 'No results found.'-->
+    {% if messages %}
+        {% for k in messages %}
+        {{k}}
+        {% endfor %}
+    {% endif %}
+
+    {{ employee_match.salary_calculation }}
+    <!-- Code for when your search has results / employee -->
+    {% if Search %}
+
+            Name: 
+            {{ Search.name }} <br>
+            Position:
+            {{ Search.position }} <br>
+            Email: 
+            {{ Search.email }} <br>
+            Address: 
+            {{ Search.address }} <br><br>
+
+            Basic Pay:
+            {{ Search.basic_pay }}<br>
+
+            Allowance:
+            {{ Search.allowance }}<br>
+
+            Overtime Hours:
+            {{ Search.overtime_hours }}<br><br>
+
+            Overtime Hour Pay:
+            {{ Search.overtime_hours_pay }}<br>
+
+            Gross Income:
+            {{ Search.gross_income }}<br><br> 
+
+            Number of Days of Absence:
+            {{ Search.days_leave }}<br> 
+            PAG-IBIG:
+            {{ Search.pagibig }}<br>
+            GSIS:
+            {{ Search.gsis }}<br>
+            Philhealth:
+            {{ Search.philhealth }}<br>
+            Withholding Tax:
+            {{ Search.withholdingtax }}<br><br>
+
+            Total Deductions:
+            {{ Search.total_deductions }}<br><br>
+
+            Net Pay:
+            {{ Search.net_pay }}<br>
+
+
+
+        <!--{% for j in salary %}
+            Overtime Hour Pay:
+            {{ j.overtime_hours }}<br>
+
+            Gross Income:
+            {{ j.gross_income }}<br><br> 
+
+            Ilang araw ka absent pota pa english neto Sean SALAMAT:
+            {{ j.days_leave }}<br> 
+            PAG-IBIG:
+            {{ j.pagibig }}<br>
+            GSIS:
+            {{ j.gsis }}<br>
+            Philhealth:
+            {{ j.philhealth }}<br>
+            Withholding Tax:
+            {{ j.withholdingtax }}<br><br>
+
+            Total Deductions:
+            {{ j.total_deductions }}<br><br>
+
+            Net Pay:
+            {{ j.net_pay }}<br>
+        {% endfor %}-->
+
+    {% endif %}
+
+
+
+</body>
+</head>
+
+</html>
