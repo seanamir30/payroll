@@ -31,9 +31,22 @@ def add_employee_form_submit(request):
     address = request.POST["address"]
     email = request.POST["email"]
     position = request.POST["position"]
-    basic_pay = request.POST["basic_pay"]
+    if position == "Doctor/Physician":
+        basic_pay1 = 16800
+        allowance1 = 400
+    elif position == "Parts Repair Section"or position =="Preventive Maintenance Section" or position == "Overhauling Section" or position == "Electrical Section" or position == "Body Building section" or position == "Machine Shop Section" or position == "Tire Section" or position == "Quick Service Section" or position == "Human Resource" or position == "Time Keeper" or position == "Inventory" or position == "Driver" or position == "Conductor" or position == "Ticket Seller":
+        basic_pay1 = 14400
+        allowance1 = 400
+    elif position == "Engineer" or position == "Accountant" or position == "Foreman":
+        basic_pay1 = 1440
+        allowance1 = 400
+    elif position == "Trainee":
+        basic_pay1 = 12888
+        allowance1 = 400
+
+    basic_pay = basic_pay1
     overtime_hours = request.POST["overtime_hours"]
-    allowance = request.POST["allowance"]
+    allowance = allowance1
     days_leave = request.POST["days_leave"]
     other_deductions = request.POST["other_deductions"]
 
