@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'app/htmlHead/css/bootstrap.min.css' %}"/>
     <link rel="stylesheet" href="{% static 'app/htmlHead/employee.css'%}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,9 +22,10 @@
             </div>
             <div class="col-md-4"></div>
             <div class = "col-md-4 menu">
-                <a href = "employer/"class = "employerButton">Employer</button></a>
+                <a href = "{% url 'next_employer'%}"class = "employerButton">Employer</button></a>
             </div>
         </div>
+    </div>
     <!-- Code for when there is no result found. Will display 'No results found.'-->
     {% if messages %}
         {% for k in messages %}
@@ -34,47 +36,69 @@
     {{ employee_match.salary_calculation }}
     <!-- Code for when your search has results / employee -->
     {% if Search %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="infowrap">
+                    <div class="name">
+                        {{ Search.name }}
+                    </div>
+                    <div class="info">
+                    {{ Search.position }} <br>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    {{ Search.email }} <br>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    {{ Search.address }} <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="infowrap2">
+                <div class="pay">Pay</div>
+                Basic Pay:
+                {{ Search.basic_pay }}<br>
 
-            Name: 
-            {{ Search.name }} <br>
-            Position:
-            {{ Search.position }} <br>
-            Email: 
-            {{ Search.email }} <br>
-            Address: 
-            {{ Search.address }} <br><br>
+                Allowance:
+                {{ Search.allowance }}<br>
 
-            Basic Pay:
-            {{ Search.basic_pay }}<br>
+                Overtime Hours:
+                {{ Search.overtime_hours }}<br>
 
-            Allowance:
-            {{ Search.allowance }}<br>
+                Overtime Hour Pay:
+                {{ Search.overtime_hours_pay }}<br>
+                </div>
+                <div class="deductionwrap">
+                    <div class="deductions">Deductions</div>
+                    Number of Days of Absence:
+                    {{ Search.days_leave }}<br> 
+                    PAG-IBIG:
+                    {{ Search.pagibig }}<br>
+                    GSIS:
+                    {{ Search.gsis }}<br>
+                    Philhealth:
+                    {{ Search.philhealth }}<br>
+                    Withholding Tax:
+                    {{ Search.withholdingtax }}<br>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="totals">
+                    <div class="gross">Gross Income:</div>
+                    {{ Search.gross_income }}<br>
 
-            Overtime Hours:
-            {{ Search.overtime_hours }}<br><br>
+                    <div class="totaldeduct">Total Deductions:</div>
+                    {{ Search.total_deductions }}<br><br>
 
-            Overtime Hour Pay:
-            {{ Search.overtime_hours_pay }}<br>
+                    <div class="netpay">Net Pay:</div>
+                    {{ Search.net_pay }}<br>
+                </div>
+            </div>
+        </div>
 
-            Gross Income:
-            {{ Search.gross_income }}<br><br> 
+            
 
-            Number of Days of Absence:
-            {{ Search.days_leave }}<br> 
-            PAG-IBIG:
-            {{ Search.pagibig }}<br>
-            GSIS:
-            {{ Search.gsis }}<br>
-            Philhealth:
-            {{ Search.philhealth }}<br>
-            Withholding Tax:
-            {{ Search.withholdingtax }}<br><br>
-
-            Total Deductions:
-            {{ Search.total_deductions }}<br><br>
-
-            Net Pay:
-            {{ Search.net_pay }}<br>
+            
+    </div>
 
 
 

@@ -23,3 +23,66 @@
 .menu{
 	padding: 30px;
 }
+.infowrap{
+	padding: 10px;
+	font-size: 130%;
+	border-radius: 5px;
+	box-shadow: 0 0 10px grey;
+	text-align: center;
+}
+
+.name{
+	color: #fb9646;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.infowrap2{
+	padding: 10px;
+	font-size: 130%;
+	border-radius: 5px;
+	box-shadow: 0 0 10px grey;
+	color: #444444;
+}
+.deductionwrap{
+	padding: 10px;
+	font-size: 130%;
+	border-radius: 5px;
+	box-shadow: 0 0 10px grey;
+	color: #444444;
+	margin-top: 10px;
+}
+.pay{
+	color: #4569a5;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.deductions{
+	color: #4569a5;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.totals{
+	padding: 10px;
+	font-size: 130%;
+	border-radius: 5px;
+	box-shadow: 0 0 10px grey;
+	color: #444444;
+	font-weight: bold;
+}
+.gross{
+	color: #fb9646;
+	font-size: 1em;
+	font-weight: bold;
+}
+.totaldeduct{
+	color: #fb9646;
+	font-size: 1em;
+	font-weight: bold;
+}
+.netpay{
+	color: #fb9646;
+	font-size: 1em;
+	font-weight: bold;
+
+}
