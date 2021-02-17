@@ -91,7 +91,7 @@ def search_employee_form_submit(request):
                 #messages.error(request, 'No results found.')
 
         else: 
-            return HttpResponseRedirect('index/')
+            return render(request, 'index.html')
 
     return render(request, 'index.html')
 
