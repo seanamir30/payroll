@@ -8,10 +8,10 @@ class Add_Employee(models.Model):
     email = models.EmailField (max_length = 150, default = '', null = False)
     address = models.CharField (max_length = 500, default = '', null = False)
     basic_pay = models.FloatField(default=None) 
-    overtime_hours = models.IntegerField(default=None)
+    overtime_hours = models.IntegerField(default=0)
     allowance = models.FloatField(default=None)
-    days_leave = models.IntegerField(default=None)
-    other_deductions = models.FloatField(default=None)
+    days_leave = models.IntegerField(default=0)
+    other_deductions = models.FloatField(default=0)
 
 
     #Django admin page; the table will show the name

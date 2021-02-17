@@ -33,7 +33,7 @@ def add_employee_form_submit(request):
     if position == "Doctor/Physician":
         basic_pay1 = 16800
         allowance1 = 400
-    elif position == "Parts Repair Section"or position =="Preventive Maintenance Section" or position == "Overhauling Section" or position == "Electrical Section" or position == "Body Building section" or position == "Machine Shop Section" or position == "Tire Section" or position == "Quick Service Section" or position == "Human Resource" or position == "Time Keeper" or position == "Inventory" or position == "Driver" or position == "Conductor" or position == "Ticket Seller":
+    elif position == "Parts Repair Section"or position =="Preventive Maintenance Section" or position == "Overhauling Section" or position == "Electrical Section" or position == "Body Building Section" or position == "Machine Shop Section" or position == "Tire Section" or position == "Quick Service Section" or position == "Human Resource" or position == "Time Keeper" or position == "Inventory" or position == "Driver" or position == "Conductor" or position == "Ticket Seller":
         basic_pay1 = 14400
         allowance1 = 400
     elif position == "Engineer" or position == "Accountant" or position == "Foreman":
@@ -44,17 +44,17 @@ def add_employee_form_submit(request):
         allowance1 = 400
 
     basic_pay = basic_pay1
-    overtime_hours = request.POST["overtime_hours"]
+    #overtime_hours = request.POST["overtime_hours"]
 
-    if int(overtime_hours) > 30:
-        messages.error(request, "Overtime hours cannot be more than 30 hours.")
+    #if int(overtime_hours) > 30:
+    #    messages.error(request, "Overtime hours cannot be more than 30 hours.")
 
     allowance = allowance1
-    days_leave = request.POST["days_leave"]
-    other_deductions = request.POST["other_deductions"]
+    #days_leave = request.POST["days_leave"]
+    #other_deductions = request.POST["other_deductions"]
 
     #assigning the local variable into the database fields
-    employee_info = Add_Employee(name = name, address = address, email = email, position = position, basic_pay = basic_pay, overtime_hours = overtime_hours, allowance = allowance, days_leave = days_leave, other_deductions = other_deductions )
+    employee_info = Add_Employee(name = name, address = address, email = email, position = position, basic_pay = basic_pay,  allowance = allowance)#, days_leave = days_leave, other_deductions = other_deductions,overtime_hours = overtime_hours)
 
     #save the entire stuff
     employee_info.save()
