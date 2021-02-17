@@ -8,11 +8,11 @@
     <title>Employer</title>
 <body>
     <h1>For employers</h1>
-    <form action="/add_employee_form_submit/", method="post"> <!--it will use 'add_employee_form_submit' url after submitting form-->
+    <form action="/add_employee_form_submit/", method="post" name = "add_employee"> <!--it will use 'add_employee_form_submit' url after submitting form-->
 
         {% csrf_token %} <!-- added for privacy reasons/security-->
         <br>
-        <input type = "text" name="name" placeholder="Enter employee name">
+        <input type = "text" name="name" placeholder="Enter employee name" required>
         <br>
         <select id="position" name="position">
             <option value="" disabled selected>Select Employee Position</option>
@@ -38,15 +38,15 @@
 
         </select>
         <br>
-        <input type = "email" name="email" placeholder="Enter employee email">
+        <input type = "email" name="email" placeholder="Enter employee email" required>
         <br>
-        <input type = "text" name="address" placeholder="Enter employee address">
+        <input type = "text" name="address" placeholder="Enter employee address" required>
         <br><br>
-        <input type = "number" name="overtime_hours" placeholder="Enter the number of overtime hours">
+        <input type = "number" name="overtime_hours" placeholder="Enter the number of overtime hours" required>
         <br>
-        <input type = "number" name="days_leave" placeholder="Enter days of leave">
+        <input type = "number" name="days_leave" placeholder="Enter days of leave" required>
         <br>
-        <input type = "number" name="other_deductions" placeholder="Enter Other Deductions if any">
+        <input type = "number" name="other_deductions" placeholder="Enter Other Deductions if any" required>
         <br><br>
         <input type="submit" value="Add Employee">
     

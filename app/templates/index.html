@@ -37,6 +37,14 @@
                     <div class="wrap">
                         <div class = "search">
                             <input class = "searchTerm" type = "number" name="search_id" placeholder="Enter Employee id">
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-error errorCatch" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    
                             <button class="searchButton" type="submit" value="Search">
                                 <i class = "fa fa-search"></i>
                             </button>
@@ -61,6 +69,8 @@
     <b>employer page -></b>
     <a href= "employer/" button>dito ka kung ikaw ssob</button></a> -->
     
+    <!-- Code for when there is no result found. Will display 'No results found.'-->
+   
 </body>
 </head>
 

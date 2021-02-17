@@ -23,9 +23,8 @@ def next_employer(request):
 
 #Code for form submission and redirect back to employer page again
 def add_employee_form_submit(request):
-    print ("Form is successfully submitted.") #print can only be seen on the terminal, not the browser
-
-
+    #print ("Form is successfully submitted.") #print can only be seen on the terminal, not the browser
+    
     #create local variable for each variable entered using the form
     name = request.POST["name"]
     address = request.POST["address"]
@@ -46,6 +45,10 @@ def add_employee_form_submit(request):
 
     basic_pay = basic_pay1
     overtime_hours = request.POST["overtime_hours"]
+
+    if int(overtime_hours) > 30:
+        messages.error(request, "Overtime hours cannot be more than 30 hours.")
+
     allowance = allowance1
     days_leave = request.POST["days_leave"]
     other_deductions = request.POST["other_deductions"]
@@ -56,6 +59,11 @@ def add_employee_form_submit(request):
     #save the entire stuff
     employee_info.save()
 
+    ##if form.is_valid():
+      #  messages.success(request, 'Successfully added the employee!')
+   # else:
+        #messages.error(request, 'There was an error!')
+
     return render(request, 'employer.html')
 
 
@@ -64,19 +72,28 @@ def search_employee_form_submit(request):
         search_id = request.POST['search_id']
         
         if search_id:
-            employee_match = Add_Employee.objects.get( pk = search_id ) #pk is primary key
-            employee_match.salary_calculation()
-
-            if employee_match:
-
+            try:
+                employee_match = Add_Employee.objects.get( pk = search_id ) #pk is primary key
+                employee_match.salary_calculation()
                 return render (request, 'employee.html', {'Search': employee_match})
-            else:
+
+            except Add_Employee.DoesNotExist:
                 messages.error(request, 'No results found.')
+                
+                return render (request, 'index.html')
+            #employee_match = Add_Employee.objects.get( pk = search_id ) #pk is primary key
+            #employee_match.salary_calculation()
+
+            #if employee_match:
+
+                #return render (request, 'employee.html', {'Search': employee_match})
+            #else:
+                #messages.error(request, 'No results found.')
 
         else: 
-            return HttpResponseRedirect('employee/')
+            return HttpResponseRedirect('index/')
 
-    return render(request, 'employee.html')
+    return render(request, 'index.html')
 
 
 
