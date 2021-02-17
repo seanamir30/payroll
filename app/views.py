@@ -75,7 +75,7 @@ def search_employee_form_submit(request):
             try:
                 employee_match = Add_Employee.objects.get( pk = search_id ) #pk is primary key
                 employee_match.salary_calculation()
-                return render (request, 'employee.html', {'Search': employee_match})
+                return render (request, 'employee.html', {'search_id': search_id, 'Search': employee_match})
 
             except Add_Employee.DoesNotExist:
                 messages.error(request, 'No results found.')

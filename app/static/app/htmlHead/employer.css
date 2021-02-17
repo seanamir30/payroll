@@ -1,0 +1,23 @@
+*{
+	color: #444444;
+}
+.bus-icon{
+	padding: 30px;
+	width: 280px;
+}
+.submitBar {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #fb9646;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  color:white;
+  border-radius: 7px;
+}
+.submitBar:hover {
+  background-color: #ffa228;
+}
