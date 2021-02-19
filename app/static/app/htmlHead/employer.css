@@ -21,3 +21,6 @@
 .submitBar:hover {
   background-color: #ffa228;
 }
+.successEmployee{
+  color: green;
+}

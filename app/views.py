@@ -58,6 +58,7 @@ def add_employee_form_submit(request):
 
     #save the entire stuff
     employee_info.save()
+    messages.success(request, 'Successfully added the employee!')
 
     ##if form.is_valid():
       #  messages.success(request, 'Successfully added the employee!')

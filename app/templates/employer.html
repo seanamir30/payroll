@@ -64,6 +64,13 @@
                         Address
                         <textarea class="form-control" rows=2 name="address" required></textarea>
                             <button type="submit" class="submitBar">Add Employee</button>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert {{ message.tags }} alert-dismissible successEmployee" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
                         
                     </form>
                 </div>
