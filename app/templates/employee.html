@@ -26,15 +26,6 @@
         </div>
     </div>
 
-    <!-- Code for when there is no result found. Will display 'No results found.'
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li class="{{ message.tags }}">{{message}}</li>
-            {% endfor %}
-        </ul>
-    {% endif %} -->
-
     {{ employee_match.salary_calculation }}
     <!-- Code for when your search has results / employee -->
     {% if Search %}
@@ -52,7 +43,7 @@
                     {{ Search.email }} <br>
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                     {{ Search.address }} <br>
-                    <br><br>
+                    <br>
                     </div>
                 </div>
             </div>
@@ -83,6 +74,8 @@
                     {{ Search.philhealth }}<br>
                     Withholding Tax:
                     {{ Search.withholdingtax }}<br>
+                    Other Deductions:
+                    {{ Search.other_deductions }}<br>
                 </div>
             </div>
             <div class="col-md-4">

@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^employer/$', views.next_employer, name='next_employer'),
     url(r'^add_employee_form_submit/$', views.add_employee_form_submit, name='add_employee_form_submit'),
     url(r'^search_employee_form_submit/$', views.search_employee_form_submit, name='search_employee_form_submit'),
+    url(r'^edit_employee_form_submit/$', views.edit_employee_form_submit, name='edit_employee_form_submit'),
+    url(r'^delete_employee_form_submit/$', views.delete_employee_form_submit, name='delete_employee_form_submit'),
 
 ]
