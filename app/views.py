@@ -108,6 +108,7 @@ def edit_employee_form_submit(request):
             
     return render(request, 'employer.html',{'latestID':latestID})
 
+
 #Code for form DELETE submission and redirect back to employer page again
 def delete_employee_form_submit(request):
     latestID1 = Add_Employee.objects.latest('pk')
@@ -120,7 +121,6 @@ def delete_employee_form_submit(request):
                 delete_employee_match = Add_Employee.objects.get(pk = delete_employee_id)#pk is primary key
                 delete_employee_match.delete()
 
-                delete_employee_match.save()
                 messages.success(request, 'Successfully deleted the employee!')
 
                 return render(request, 'employer.html',{'latestID':latestID})

@@ -84,7 +84,7 @@
                 <div class="infowrap">
                 <form action="/delete_employee_form_submit/", method="post" name = "delete_employee">
                     {% csrf_token %}
-                    <br><br>
+                    <br>
                     Delete Employee
                     <input type="number" class="form-control mb-4" min="0" oninput="validity.valid||(value='');" name="delete_employee_id" placeholder="Enter Employee ID" required>
                     <button type="submit" class="submitBar">Delete</button>
