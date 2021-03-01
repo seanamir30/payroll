@@ -37,7 +37,7 @@ def add_employee_form_submit(request):
         basic_pay1 = 14400
         allowance1 = 400
     elif position == "Engineer" or position == "Accountant" or position == "Foreman":
-        basic_pay1 = 1440
+        basic_pay1 = 14400
         allowance1 = 400
     elif position == "Trainee":
         basic_pay1 = 12888
