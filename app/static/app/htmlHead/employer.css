@@ -24,35 +24,3 @@
 .successEmployee{
   color: green;
 }
-.employeeNumber{
-  color: #444444;
-  font-weight: lighter;
-  font-size: 20px;
-}
-.employerButton:hover{
-  color: white;
-  background-color: #ffa228;
-}
-.infowrap{
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px grey;
-  margin-top: 10px;
-}
-.employerButton{
-  background-color: #fb9646;
-  font-weight: 600;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 10px;
-  width: 100px;
-  height: 45px;
-  float: right;
-  outline:none;
-  line-height: 43px;
-}
-.menu{
-  padding: 30px;
-}
