@@ -15,8 +15,20 @@
             <div class="col-md-4">
                 <a href="{% url 'index' %}"><img class='bus-icon' src="{% static 'app/images/bus-icon.png' %}"></a>
             </div>
-            <div class="col-md-4"></div>
-            <div class = "col-md-4"></div>
+            <div class="col-md-4">
+                
+                {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert {{ message.tags }} alert-dismissible successEmployee" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+
+            </div>
+            <div class = "col-md-4 menu">
+                <a href = "/admin/app/add_employee/"class = "employerButton">Admin</button></a>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-8">
@@ -76,14 +88,6 @@
                     <button type="submit" class="submitBar">Delete</button>
                 </form>
             </div>  
-
-                            {% if messages %}
-                                {% for message in messages %}
-                                    <div class="alert {{ message.tags }} alert-dismissible successEmployee" role="alert">
-                                        {{ message }}
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
                         
 
                 </div>

@@ -80,6 +80,8 @@ def search_employee_form_submit(request):
 
 #Code for form EDIT submission and redirect back to employer page again
 def edit_employee_form_submit(request):
+    latestID1 = Add_Employee.objects.latest('pk')
+    latestID = latestID1.pk + 1
     if request.method == "POST":
         #create local variable for each variable entered using the form
         days_leave = request.POST["days_leave"]
@@ -97,17 +99,19 @@ def edit_employee_form_submit(request):
                 edit_employee_match.save()
                 messages.success(request, 'Successfully edited the employee!')
 
-                return render(request, 'employer.html')
+                return render(request, 'employer.html',{'latestID':latestID})
 
             except Add_Employee.DoesNotExist:
                 messages.error(request, 'Employee ID does not exist.')
         else: 
-            return render(request, 'employer.html')
+            return render(request, 'employer.html',{'latestID':latestID})
             
-    return render(request, 'employer.html')
+    return render(request, 'employer.html',{'latestID':latestID})
 
 #Code for form DELETE submission and redirect back to employer page again
 def delete_employee_form_submit(request):
+    latestID1 = Add_Employee.objects.latest('pk')
+    latestID = latestID1.pk + 1
     if request.method == "POST":
         delete_employee_id = request.POST['delete_employee_id']
 
@@ -127,4 +131,4 @@ def delete_employee_form_submit(request):
         else: 
             return render(request, 'employer.html')
             
-    return render(request, 'employer.html')
+    return render(request, 'employer.html',{'latestID':latestID})
