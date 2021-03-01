@@ -123,12 +123,12 @@ def delete_employee_form_submit(request):
                 delete_employee_match.save()
                 messages.success(request, 'Successfully deleted the employee!')
 
-                return render(request, 'employer.html')
+                return render(request, 'employer.html',{'latestID':latestID})
 
             except Add_Employee.DoesNotExist:
                 messages.error(request, 'Employee ID does not exist.')
 
         else: 
-            return render(request, 'employer.html')
+            return render(request, 'employer.html',{'latestID':latestID})
             
     return render(request, 'employer.html',{'latestID':latestID})
