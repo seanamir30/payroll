@@ -21,7 +21,8 @@
         <div class="row">
             <div class="col-md-8">
             <div class="border border-light p-5">
-            
+            <div class = "employeeNumber">Employee #{{latestID}}</div>
+            <br>
                     <form action="/add_employee_form_submit/", method="post" name = "add_employee">
                         {% csrf_token %}
                                 Employee Name
@@ -64,6 +65,18 @@
                         Address
                         <textarea class="form-control" rows=2 name="address" required></textarea>
                             <button type="submit" class="submitBar">Add Employee</button>
+                    </form>
+
+            <div class="col-md-6">
+                <form action="/delete_employee_form_submit/", method="post" name = "delete_employee">
+                    {% csrf_token %}
+                    <br><br>
+                    Delete Employee
+                    <input type="number" class="form-control mb-4" min="0" oninput="validity.valid||(value='');" name="delete_employee_id" placeholder="Enter Employee ID" required>
+                    <button type="submit" class="submitBar">Delete</button>
+                </form>
+            </div>  
+
                             {% if messages %}
                                 {% for message in messages %}
                                     <div class="alert {{ message.tags }} alert-dismissible successEmployee" role="alert">
@@ -72,12 +85,25 @@
                                 {% endfor %}
                             {% endif %}
                         
-                    </form>
+
                 </div>
                 </div>
                 <div class="col-md-4">
                     <div class="border border-light p-5">
-                        
+                        <form action="/edit_employee_form_submit/", method="post" name = "edit_employee">
+                            {% csrf_token %}
+                            Employee ID
+                            <input type="number" class="form-control mb-4" min="0" oninput="validity.valid||(value='');" name="edit_employee_id" placeholder="#" required>
+                            Overtime Hours
+                            <input type="number" class="form-control mb-4" min="0" max="40" oninput="validity.valid||(value='');" name="overtime_hours" placeholder="0" required>
+                            Days Leave
+                            <input type="number" class="form-control mb-4" min="0" max="15" oninput="validity.valid||(value='');"name="days_leave" placeholder="0" required>
+                            Other Deductions
+                            <input type="number" min="0" oninput="validity.valid||(value='');" class="form-control mb-4" name="other_deductions" placeholder="₱0.00" required>
+
+                            <button type="submit" class="submitBar">Edit</button>
+
+                        </form>
                     </div>                    
                 </div>
             </div>

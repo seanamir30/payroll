@@ -1,5 +1,4 @@
 from django import forms
-
 from .models import Add_Employee
 
 class CustomForm(forms.Form):
