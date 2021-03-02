@@ -26,7 +26,7 @@ class Add_Employee(models.Model):
         self.gross_income = self.basic_pay + self.overtime_hours + self.allowance
 
         #Deductions
-        self.days_leave = self.days_leave * 512
+        self.days_leave = self.days_leave * 557
         self.pagibig = self.basic_pay * 0.01
         self.gsis = self.basic_pay * 0.09
         self.withholdingtax = self.basic_pay * 0.15

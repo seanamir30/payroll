@@ -2,9 +2,9 @@
 from django.contrib import admin
 from .models import *
 
-#Make Django Admin database show the variables inside Display_Fields
-#@admin.register(Add_Employee)
-#class Add_Employee_Admin(admin.ModelAdmin):
-#    list_display = Add_Employee.Display_Fields
+class Add_Employee_Admin(admin.ModelAdmin):
+	ordering = ('id',)
+	list_display = ('id','name','position','email')
+	readonly_fields = ('id',)
 
-admin.site.register(Add_Employee)
+admin.site.register(Add_Employee, Add_Employee_Admin)
